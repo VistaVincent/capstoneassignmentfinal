@@ -19,11 +19,16 @@ def posts():
     return dumps(_items)
 
 def insert():
-    post = {"author": "Mike",
+    post = {"author": "Vista",
     "text": "My first blog post!",
     "tags": ["mongodb", "python", "pymongo"],
     "date": datetime.datetime.utcnow()}
+    post2={"author": "Jordan Peterson",
+    "text": "12 rules for life",
+    "tags": ["Philosophy", "Lobsters", "pymongo"],
+    "date": datetime.datetime.utcnow()}
     db.posts.insert_one(post)
+    db.posts.insert_one(post2)
 
 if __name__ == "__main__":
     insert()
